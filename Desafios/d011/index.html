@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobreposição de Imagens</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #espaco{
+            height: 100vh;
+            background-image: url(imagens/espaco.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        #astronauta{
+            height: 100vh;
+            background-image: url(imagens/astronauta.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 400px;
+        }
+    </style>
+</head>
+<body>
+    <section id="espaco">
+        <article id="astronauta">
+
+        </article>
+    </section>
+</body>
+</html>
