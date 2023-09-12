@@ -2,6 +2,107 @@
 
 /* Todas as demais mídias */
 
+/* 
+    Typical devices breakpoints
+
+    aparelhos muito pequenos: (celulares, 600px and down) até 600px
+
+    aparelhos pequenos: (tablets portrait e celulares grandes, 600px and up) de 600 - 768px
+
+    aparelhos médios: (tablets landscape, 768px and up) 768px - 992px
+
+    aparelhos grandes: (laptops/desktops, 992px and up) 992px - 1200px
+
+    aparelhos muito grandes: (1200px and up) acima de 1200px
+
+    https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp
+
+*/
+
+/* Como foi feito o mobile first na outra aba, não inserimos as especifícações de aparelhos muito pequenos e aparelhos pequenos neste arquivo, visto que foi considerado como inserido o estilo de aparelhos móveis no outro arquivo. (Porém o correto é considerar inserir TODOS)*/
+
 @media print{
+    *{
+        font-family: 'Courier New', Courier, monospace;
+    }
     
+    body{
+        background-image: url(../imagens/back-print.jpg); /* Desnecessário ter background em folhas de impressão*/
+    }
+
+    main{
+        border: 2px solid black;
+    }
+
+    main h1{
+        color: black;
+        text-shadow: none;
+    }
+
+    main::after{
+        content: 'Essa impressão foi feita através do site www.cursoemvideo.com';
+    }
+
+    img#phone{display: none;}
+
+    img#tablet{display: none;}
+
+    img#print{display: block;}
+
+    img#pc{display: none;}
+
+    img#tv{display: none;}
 }
+
+@media screen and (min-width: 768px) and (max-width: 992px) /* Aparelhos médios */
+{
+    body{
+        background-image: url(../imagens/back-tablet.jpg);
+    }
+
+    img#phone{display: none;}
+
+    img#tablet{display: block;}
+
+    img#print{display: none;}
+
+    img#pc{display: none;}
+
+    img#tv{display: none;}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) /* Aparelhos grandes */
+{
+    body{
+        background-image: url(../imagens/back-pc.jpg);
+    }
+
+    img#phone{display: none;}
+
+    img#tablet{display: none;}
+
+    img#print{display: none;}
+
+    img#pc{display: block;}
+
+    img#tv{display: none;}
+}
+
+@media screen and (min-width: 1200px) /* Aparelhos muito grandes */
+{
+    
+    body{
+        background-image: url(../imagens/back-tv.jpg);
+    }
+
+    img#phone{display: none;}
+
+    img#tablet{display: none;}
+
+    img#print{display: none;}
+
+    img#pc{display: none;}
+
+    img#tv{display: block;}
+}
+
